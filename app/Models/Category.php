@@ -16,4 +16,8 @@ class Category extends Model
         'name' => 'string',
     ];
 
+    public function product(): BelongsToMany
+    {
+        return $this->belongsToMany(Product::class, 'product_categories', 'category_id', 'product_id');
+    }
 }
