@@ -12,7 +12,7 @@ class Discount extends Model
     protected $fillable = [
         'name',
         'code',
-        'discount'
+        'discount_percent'
     ];
 
     public function products()

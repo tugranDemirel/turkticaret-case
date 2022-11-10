@@ -13,4 +13,5 @@ class ProductDiscount extends Model
         'product_id',
         'discount_id',
     ];
+
 }
