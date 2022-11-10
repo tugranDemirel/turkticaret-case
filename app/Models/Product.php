@@ -16,8 +16,7 @@ class Product extends Model
         'description',
         'image',
         'author',
-        'price',
-        'quantity',
+        'price'
     ];
     protected $casts = [
         'price' => 'double',
@@ -29,4 +28,13 @@ class Product extends Model
         return $this->belongsToMany(Category::class, 'product_categories', 'product_id', 'category_id');
     }
 
+    public function inventories()
+    {
+        return $this->hasOne(ProductInventory::class);
+    }
+
+    public function discounts()
+    {
+        return $this->belongsToMany(Discount::class, 'product_discounts', 'product_id', 'discount_id');
+    }
 }
