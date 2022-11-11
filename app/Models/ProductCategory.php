@@ -14,5 +14,10 @@ class ProductCategory extends Model
         'product_id',
         'category_id'
     ];
+    protected $casts = [
+        'product_id' => 'integer',
+        'category_id' => 'integer'
+    ];
+    public $timestamps = false;
 
 }
